@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A digital product for sale",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "image": { "type": "string" },
+        "regularPrice": { "type": "number" },
+        "salePrice": { "type": "number" },
+        "categories": { "type": "array", "items": { "type": "string" } },
+        "featured": { "type": "boolean" },
+        "banner": { "type": "boolean" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "salePrice", "image"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "icon": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Customer review",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewText": { "type": "string" }
+      },
+      "required": ["customerName", "rating", "reviewText"]
+    },
+    "FAQ": {
+      "title": "FAQ",
+      "description": "Frequently asked question",
+      "type": "object",
+      "properties": {
+        "question": { "type": "string" },
+        "answer": { "type": "string" }
+      },
+      "required": ["question", "answer"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "General store settings",
+      "type": "object",
+      "properties": {
+        "whatsappNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "location": { "type": "string" },
+        "facebookPage": { "type": "string" },
+        "paymentNumber": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "products": { "schema": "Product", "description": "Collection of digital products" },
+    "categories": { "schema": "Category", "description": "Collection of product categories" },
+    "reviews": { "schema": "Review", "description": "Collection of customer reviews" },
+    "faqs": { "schema": "FAQ", "description": "Collection of FAQs" },
+    "settings": { "schema": "Settings", "description": "Store settings" }
+  }
+}
