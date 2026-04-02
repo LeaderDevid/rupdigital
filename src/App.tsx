@@ -27,7 +27,7 @@ export default function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
+        <Router basename={import.meta.env.PROD ? '/rupdigital' : ''}>
           <ScrollToTop />
           <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900">
             <Header onCartOpen={() => setIsCartOpen(true)} />
